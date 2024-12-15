@@ -3,7 +3,9 @@ import pandas as pd
 import joblib
 # 設置標題
 st.title('銷售預測應用')
-model,scaler = joblib.load(r'C:/Users/user\Documents/ai2_20241021/Ch16/scaled_sales_prediction_model.pkl')
+#model,scaler = joblib.load(r'C:/Users/user\Documents/ai2_20241021/Ch16/scaled_sales_prediction_model.pkl')
+model_path = os.path.join('Test_Streamlit', 'scaled_sales_prediction_model.pkl')
+model, scaler = joblib.load(model_path)
 
 # 輸入廣告支出
 tv_spend = st.number_input('輸入 TV 廣告支出', min_value=0.0)
